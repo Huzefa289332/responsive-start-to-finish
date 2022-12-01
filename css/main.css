@@ -550,8 +550,11 @@ h2 {
   position: absolute;
   top: 0;
   right: 0;
-  left: 0;
+  left: 100%;
   font-size: 1.2rem;
+  overflow: hidden;
+  -webkit-transition: all ease-in-out 500ms;
+  transition: all ease-in-out 500ms;
 }
 
 .main-nav ul {
@@ -583,9 +586,60 @@ h2 {
           justify-content: center;
 }
 
+.main-nav li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .main-nav a {
   color: white;
   text-decoration: none;
+}
+
+.main-nav.is-open {
+  left: 0;
+}
+
+.nav-toggle {
+  display: block;
+  padding: 1em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  content: "";
+  display: block;
+  width: 2em;
+  height: 3px;
+  background: white;
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
+}
+
+.hamburger::before {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.hamburger::after {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.hamburger.is-open {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger.is-open::after {
+  -webkit-transform: rotate(-90deg) translateX(3px);
+          transform: rotate(-90deg) translateX(3px);
+}
+
+.hamburger.is-open::before {
+  opacity: 0;
 }
 
 .btn {
