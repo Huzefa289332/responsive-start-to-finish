@@ -458,6 +458,7 @@ template {
 
 body {
   color: #048ca8;
+  text-align: center;
 }
 
 img {
@@ -477,6 +478,16 @@ img {
   list-style: none;
 }
 
+.lg-screen {
+  display: none;
+}
+
+.bg-primary {
+  background: #048ca8;
+  color: white;
+  padding: 5em 2.5em;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 .75em 0;
 }
@@ -490,6 +501,7 @@ h1 {
   font-weight: 300;
   line-height: 1.15;
   text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 h2 {
@@ -502,10 +514,53 @@ h2 {
 .title-large {
   font-size: 3rem;
   font-weight: 900;
+  line-height: .9;
 }
 
 .title-large span {
   font-weight: 300;
+}
+
+.title-box {
+  background: #d31869;
+  color: white;
+  margin: 0 auto;
+  padding: 2em;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  max-width: 90%;
+}
+
+@media (min-width: 495px) {
+  .title-box {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+}
+
+.title-box + .bg-primary {
+  padding-top: 6em;
+}
+
+@media (min-width: 495px) {
+  .title-box + .bg-primary {
+    padding-top: 8em;
+  }
+}
+
+.title-footer {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.title-footer::before, .title-footer::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: white;
+  opacity: 0.25;
+  margin: .75em 0;
 }
 
 .text-intro {
@@ -516,6 +571,14 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
 }
 
 .main-header {
@@ -541,10 +604,6 @@ h2 {
   text-align: center;
 }
 
-.hero-img {
-  display: none;
-}
-
 .main-nav {
   background: #d31869;
   position: absolute;
@@ -553,8 +612,8 @@ h2 {
   left: 100%;
   font-size: 1.2rem;
   overflow: hidden;
-  -webkit-transition: all ease-in-out 500ms;
-  transition: all ease-in-out 500ms;
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms;
 }
 
 .main-nav ul {
@@ -578,6 +637,16 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -586,13 +655,8 @@ h2 {
           justify-content: center;
 }
 
-.main-nav li:hover {
+.main-nav a:hover {
   background: rgba(0, 0, 0, 0.1);
-}
-
-.main-nav a {
-  color: white;
-  text-decoration: none;
 }
 
 .main-nav.is-open {
@@ -642,6 +706,74 @@ h2 {
   opacity: 0;
 }
 
+.sales-points {
+  padding: 10vh 0 0;
+}
+
+.sales-points .sales-point {
+  margin-bottom: 2.5em;
+}
+
+.sales-points .sales-point:first-of-type {
+  margin-top: 1.5em;
+}
+
+.sales-points .sales-point:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  background: #444;
+  color: white;
+  padding: 5em 0;
+  position: relative;
+}
+
+footer a {
+  color: white;
+}
+
+footer::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: url(../img/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+}
+
+.social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 3rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  opacity: 0.8;
+  margin: .7em 0;
+}
+
+.nav-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-footer a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
 .btn {
   display: inline-block;
   padding: .75em 2.5em;
@@ -671,4 +803,14 @@ h2 {
 .btn--secondary:hover, .btn--secondary:focus {
   background: white;
   color: #048ca8;
+}
+
+.cta {
+  background-color: #16db93;
+  background-image: url(../img/call-to-action-background.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 5em 0;
+  background-blend-mode: multiply;
+  color: white;
 }
