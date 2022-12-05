@@ -18,11 +18,14 @@ h2
     line-height: 1
 
 .title-large
-    font-size: 3rem
+    font-size: 1.5rem
     font-weight: $font-black
     line-height: .9
     span
         font-weight: $font-light
+
+    @media(min-width:725px)
+        font-size: 3rem
 
 .title-box
     background: $accent
@@ -38,6 +41,9 @@ h2
         padding-top: 6em
         @media( min-width: 495px )
             padding-top: 8em
+
+    @media (min-width: 725px)
+        max-width: 700px
 
 .title-footer
     text-transform: uppercase
